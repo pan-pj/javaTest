@@ -1,0 +1,21 @@
+#配置调用product-service服务采用的负载均衡策略
+PRODUCT-SERVICE:
+  ribbon:
+    #NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+    OkToRetryOnAllOperations: true # 是否对所有操作都进行重试
+    MaxAutoRetriesNextServer: 2 # 切换实例的重试次数
+feign:
+  hystrix:
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+spring:
+  rabbitmq:
+    host: 129.204.94.126
+    port: 5672
+    username: java1907
+    password: 123
+    virtual-host: /java1907
